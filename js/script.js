@@ -4,7 +4,7 @@ window.onload = function() {
     checkErrors();
 
     let panInput = document.querySelector("#pan");
-    let panInputWrapper = document.querySelector(".pan-block .wrapper-input");
+    let panInputWrapper = document.querySelector(".pan-block .wrapper-input")
     let expDateBlock = document.querySelector(".inline");
     let expMonth = document.querySelector("#expMonth");
     let expYear = document.querySelector("#expYear");
@@ -32,6 +32,7 @@ window.onload = function() {
     })
 
     expMonth.addEventListener("focus", () => {
+        //  expDateBlock.style.border = "none";
         expDateBlock.style.border = "1px solid #CCCCCC";
         expDateBlock.style.boxShadow = "0 0 0 4px #8FCDEF";
     })
@@ -152,7 +153,7 @@ function pressEnter(event, elem) {
 
 function checkErrors() {
     let panInput = document.querySelector("#pan");
-    let panInputWrapper = document.querySelector(".pan-block .wrapper-input");
+    let panInputWrapper = document.querySelector(".pan-block .wrapper-input")
     let expDateBlock = document.querySelector(".inline");
     let cvvInput = document.querySelector("#cvv2");
     let cvvInputWrapper = document.querySelector(".cvv2-block .wrapper-input");
@@ -169,18 +170,16 @@ function checkErrors() {
         }
     }
 
-    console.log(errors);
-
-    for (let i = errors.length; i > 0; i--) {
-        console.log(i)
-        if (errors[i - 1].innerHTML != '') {
-            console.log(errors[i - 1]);
-            if (i == 2) {
+    for (let i = errors.length - 1; i >= 0; i--) {
+        console.log(errors);
+        if (errors[i].innerHTML != '') {    
+            console.log(inputs[i]);
+            if (i == 1) {
                 expMonth.focus();
-            } else if (i == 3) {
-                cvvInput.focus();
-            } else if (i == 1) {
+            } else if (i == 0) {
                 panInput.focus();
+            } else {
+                cvvInput.focus();
             }
         }
     }

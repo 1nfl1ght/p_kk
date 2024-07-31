@@ -206,7 +206,6 @@ label {
 
   padding: 6px, 20px, 0px, 20px;
 
-  border: none;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -223,30 +222,30 @@ label {
 }
 
 .wrapper-input {
+  background-color: white;
 
-  border: 1px solid #CCCCCC;
-
-  border-radius: 13px;
-  -webkit-border-radius: 13px;
-  -moz-border-radius: 13px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-
-#pan .wrapper-input {
+.pan-block .wrapper-input {
   width: 447px;
   height: 58px;
-}
 
-.pan-block .wrapper-input {
   margin-top: 5px;
 }
 
 .pan-block input[name=pan] {
+  height: 100%;
+  width: 100%;
   padding: 6px 10px;
   font-size: 38px;
+  background: none;
+  border: none;
 }
 
 .expDatePlusCvvBlock {
@@ -306,16 +305,17 @@ div .inline {
   width: 100px;
 }
 
-.cvv2-block .group-input {
-  text-align: center;
-  font-size: 38px;
-  height: 100%;
-}
-
 .cvv2-block .wrapper-input {
   margin-bottom: 5px;
   width: 172px;
   height: 58px;
+}
+
+.cvv2-block .group-input {
+  text-align: center;
+  font-size: 38px;
+  background: none;
+  border: none;
 }
 
 .cards {
@@ -433,6 +433,11 @@ input::-ms-clear {
     font-size: 12px;
   }
 
+  .pan-block .wrapper-input {
+    width: 295px;
+    height: 46px;
+  }
+
   .pan-block input[name=pan] {
     font-size: 20px;
     padding-left: 35px;
@@ -452,6 +457,11 @@ input::-ms-clear {
   .expDate-block span {
     font-size: 20px;
 }
+
+  .cvv2-block .wrapper-input {
+    width: 139px;
+    height: 46px;
+  }
 
   .cvv2-block .group-input {
     font-size: 20px;
